@@ -152,6 +152,7 @@ svg{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 }
 
 .nav__logo{
@@ -258,6 +259,7 @@ svg{
 .home__description{
     margin-bottom: 2.5rem;
     color: var(--text-color-light);
+    padding: 0 2rem;
 }
 
 .home__buttons{
@@ -314,6 +316,7 @@ svg{
 
 .about__description{
     margin-bottom: 2rem;
+    padding: 0 2rem;
 }
 
 .about__list{
@@ -368,6 +371,7 @@ svg{
 
 .services__description{
     margin-bottom: 2rem;
+    padding: 0 2rem;
 }
 
 .swiper-wrapper{
@@ -385,7 +389,7 @@ svg{
     width: 250px;
     background-color: var(--container-color);
     border: 2px solid var(--gray-border);
-    padding: 2rem 1rem 3.5rem;
+    padding: 2rem .75rem 2rem 2rem;
     transition: border-color .4s;
     align-items: start;
 }
@@ -436,6 +440,7 @@ svg{
     border: 2px solid transparent;
     background-clip: content-box;
     transition: border-color .4s;
+    padding: 1.5rem;
 }
 
 .projects__card:hover{
@@ -456,6 +461,12 @@ svg{
     font-weight: var(--font-medium);
     color: var(--title-color);
     margin-bottom: 1.5rem;
+}
+
+.projects__img{
+    width: 280px;
+    margin: 0 auto;
+    margin-top: .75rem;
 }
 
 /*================= Contacts ========================*/
@@ -538,6 +549,8 @@ svg{
     row-gap: 4rem;
     padding-bottom: 4rem;
     border-bottom: 1px solid var(--black-border);
+    display: flex;
+    flex-direction: column;
 }
 
 .footer__logo{
@@ -562,8 +575,9 @@ svg{
 }
 
 .footer__content{
-    grid-template-columns: repeat(1, max-content);
-    gap: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
 }
 
 .footer__title{
@@ -735,14 +749,6 @@ svg{
         margin-right: 0;
     }
 
-    .footer__container{
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .footer__content{
-        grid-template-columns: repeat(auto, max-content);
-    }
-
     .header{
         width: 100%;
     }
@@ -757,9 +763,34 @@ svg{
         grid-template-columns: 360px;
         justify-content: center;
     }
+}
+
+@media(width > 460px){
+    .footer__container{
+        flex-direction: row;
+        column-gap: 4rem;
+    }
+}
+
+@media(width > 768px){
+    .footer__content{
+        flex-direction: row;
+        column-gap: 5rem;
+        justify-content: space-between;
+        width: 60%;
+    }
 
     .footer__container{
-        display: flex;
+        column-gap: 10rem;
+    }
+
+    .projects__card{
+        padding: .75rem;
+    }
+
+    .home__description,
+    .about__description{
+        padding: 0;
     }
 }
 
@@ -774,15 +805,6 @@ svg{
 
     .contact__data{
         grid-template-columns: repeat(2, 240px);
-    }
-
-    .footer__container{
-        grid-template-columns: repeat(2, max-content);
-        justify-content: space-between;
-    }
-
-    .footer__content{
-        grid-template-columns: repeat(3, max-content);
     }
 }
 
@@ -992,10 +1014,6 @@ svg{
 
     .footer__container{
         padding-bottom: 6rem;
-    }
-
-    .footer__content{
-        column-gap: 7rem;
     }
 
     .footer__description{
